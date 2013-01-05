@@ -1,0 +1,22 @@
+<?php
+/**
+ * implements hook_init
+ */
+function formalize_init() {
+  $library_path = 'sites/all/libraries/formalize';
+  // Add CSS
+  $css_options = array(
+    'type' => 'file',
+    'group' => CSS_DEFAULT,
+    'every_page' => TRUE,
+  );
+  drupal_add_css($library_path . '/css/reset.css', $css_options);
+  drupal_add_css($library_path . '/css/formalize.css', $css_options);
+  // Add JS
+  $js_options = array(
+    'type' => 'file',
+    'group' => JS_DEFAULT,
+    'every_page' => TRUE,
+  );
+  drupal_add_js($library_path . '/js/jquery.formalize.min.js', $js_options);
+}
